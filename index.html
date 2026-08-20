@@ -87,7 +87,7 @@ p{margin:0}
 .hs span{font-size:13.5px;color:var(--ink3);line-height:1.45;display:block}
 
 /* ---------- sections ---------- */
-.sec{padding:100px 0}
+.sec{padding:100px 0;scroll-margin-top:92px}.confirm{scroll-margin-top:96px}
 .sec-alt{background:var(--paper2)}
 .sec-dark{background:var(--green);color:var(--greenInk)}
 .sec-dark .eyebrow{color:rgba(235,230,218,.6)}
@@ -1076,14 +1076,12 @@ p{margin:0}
       "</div>";
     $("#confirm-panel").classList.remove("hide");
     $(".book").classList.add("hide");
-    requestAnimationFrame(function(){requestAnimationFrame(function(){
-      window.scrollTo(0,$("#confirm-panel").getBoundingClientRect().top+window.pageYOffset-90);
-      $("#confirm-panel").focus();
-    });});
+    $("#confirm-panel").scrollIntoView({block:"start",behavior:"auto"});
+    $("#confirm-panel").focus({preventScroll:true});
     $("#restart").addEventListener("click",function(){
       $("#confirm-panel").classList.add("hide");
       $(".book").classList.remove("hide");
-      $("#book").scrollIntoView({block:"start"});
+      $("#book").scrollIntoView({block:"start",behavior:"auto"});
     });
   });
 
