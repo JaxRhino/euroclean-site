@@ -293,6 +293,12 @@ p{margin:0}
   .hs:nth-child(3),.hs:nth-child(4){border-bottom:0}
   .hs:last-child{padding-right:24px}
 }
+@media(max-width:1000px){
+  .nav{display:none}
+  .nav.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:8px 20px 18px;margin:0;z-index:90}
+  .nav.open a{padding:13px 0;border-bottom:1px solid var(--line)}
+  .burger{display:block}
+}
 @media(max-width:760px){
   body{font-size:16px}
   .wrap{padding:0 20px}
@@ -375,7 +381,7 @@ p{margin:0}
   <div class="hero-strip">
     <div class="wrap">
       <div class="hs"><b>You see the price</b><span>Not an estimate range. The number you pay, before anyone knocks.</span></div>
-      <div class="hs"><b>You pick the window</b><span>Two-hour arrival windows, six days a week.</span></div>
+      <div class="hs"><b>You pick the window</b><span>Two-hour arrival windows, seven days a week.</span></div>
       <div class="hs"><b>The same team</b><span>Vetted, background-checked, and sent back to you &mdash; not rotated.</span></div>
       <div class="hs"><b>You can stop anytime</b><span>Recurring pricing with no contract and no cancellation fee.</span></div>
     </div>
