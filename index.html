@@ -87,7 +87,7 @@ p{margin:0}
 .hs span{font-size:13.5px;color:var(--ink3);line-height:1.45;display:block}
 
 /* ---------- sections ---------- */
-.sec{padding:100px 0;scroll-margin-top:92px}.confirm{scroll-margin-top:96px}
+.sec{padding:100px 0;scroll-margin-top:92px}.confirm{scroll-margin-top:150px}
 .sec-alt{background:var(--paper2)}
 .sec-dark{background:var(--green);color:var(--greenInk)}
 .sec-dark .eyebrow{color:rgba(235,230,218,.6)}
@@ -351,6 +351,7 @@ p{margin:0}
           <div><dt>Insurance</dt><dd>Licensed, bonded, insured</dd></div>
           <div><dt>Commitment</dt><dd>No contracts</dd></div>
           <div><dt>Guarantee</dt><dd>48-hour re-clean</dd></div>
+<div><dt>Products</dt><dd>Eco-friendly, non-toxic</dd></div>
         </dl>
       </aside>
     </div>
@@ -436,7 +437,7 @@ p{margin:0}
         </div>
 
         <div class="step" id="step-when">
-          <div class="step-hd"><span class="step-no">05</span><h3>Pick a day</h3><span class="hint">Closed Sundays</span></div>
+          <div class="step-hd"><span class="step-no">05</span><h3>Pick a day</h3><span class="hint">Seven days a week</span></div>
           <div class="cal-top">
             <h4 id="cal-month">Month</h4>
             <div class="cal-nav">
@@ -721,7 +722,7 @@ p{margin:0}
     <div class="faq">
       <details><summary>Is the price I see the price I pay?</summary><div class="a">Yes, for the home you described. If the home is materially different from what was entered &mdash; more rooms, or a level of build-up that needs a deep clean rather than a maintenance visit &mdash; we tell you before we start, never after we finish. And if it needs less than you booked, we charge less.</div></details>
       <details><summary>Do I have to be home?</summary><div class="a">No. Most of our recurring customers are at work. Leave a code, a lockbox or a key and tell us in the notes. The crew locks up and texts you when they are out.</div></details>
-      <details><summary>Do you bring your own supplies?</summary><div class="a">Everything, including the vacuum. If you prefer we use a specific product on a particular surface &mdash; stone, hardwood, a finish you are protective of &mdash; leave it out with a note and we will use it.</div></details>
+      <details><summary>Do you bring your own supplies?</summary><div class="a">Everything, including the vacuum, and the standard line is eco-friendly and non-toxic &mdash; safe around children and pets. If you prefer we use a specific product on a particular surface &mdash; stone, hardwood, a finish you are protective of &mdash; leave it out with a note and we will use it.</div></details>
       <details><summary>What if something is missed?</summary><div class="a">Call or text within 48 hours and we come back and clean it. No argument and no charge. That is the whole guarantee, and it is the reason to hire a company with an address rather than a stranger with a bucket.</div></details>
       <details><summary>Are you insured, and are the cleaners checked?</summary><div class="a">Licensed, bonded and insured, and accredited by the Better Business Bureau with an A+ rating since 2020. Cleaners are interviewed in person and background-checked before they are ever sent to a home.</div></details>
       <details><summary>Am I locked into a contract?</summary><div class="a">No. Recurring pricing is a discount for keeping the schedule, not a contract. Skip a visit, change the frequency, or stop entirely &mdash; there is no fee and no notice period.</div></details>
@@ -984,7 +985,7 @@ p{margin:0}
     for(var i=0;i<first;i++) html+='<div class="day empty"></div>';
     for(var d=1;d<=days;d++){
       var dt=new Date(y,m,d);
-      var bad = dt<minDate || dt>maxDate || dt.getDay()===0;
+      var bad = dt<minDate || dt>maxDate;
       var on = sameDay(dt,S.date);
       html+='<button type="button" class="day'+(on?" on":"")+'" data-d="'+d+'"'+(bad?" disabled":"")+' aria-label="'+fmtDate(dt)+'">'+d+"</button>";
     }
