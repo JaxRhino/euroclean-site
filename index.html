@@ -17,17 +17,17 @@
 <meta name="twitter:title" content="Euroclean Cleaning Service — Jacksonville, FL">
 <meta name="twitter:description" content="Get your price in under a minute and book online.">
 <meta name="twitter:image" content="og.png">
-<meta name="theme-color" content="#1E3A31">
+<meta name="theme-color" content="#123E7C">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#F5F2EC; --paper2:#EDE8DE; --paper3:#E4DED2;
-  --ink:#121A17; --ink2:#3E4B45; --ink3:#6E7A74;
-  --line:#D9D2C4; --line2:#C6BDAB;
-  --green:#1E3A31; --green2:#2B5648; --greenInk:#EBE6DA;
-  --brass:#9A7B45;
+  --paper:#F8F3E8; --paper2:#F1EADB; --paper3:#E9DFCA;
+  --ink:#0E1E33; --ink2:#39485F; --ink3:#67758A;
+  --line:#E1D7C5; --line2:#CCBEA6;
+  --green:#123E7C; --green2:#1B5FBF; --greenInk:#EFF4FA;
+  --brass:#8A6209; --gold:#E8A81C; --goldDk:#C68C0B;
   --r:2px;
   --wrap:1220px;
   --ff-d:"Fraunces",Georgia,"Times New Roman",serif;
@@ -58,8 +58,8 @@ p{margin:0}
 .hdr-cta{display:flex;align-items:center;gap:18px}
 .tel{font-size:14px;font-weight:600;text-decoration:none;letter-spacing:.02em;white-space:nowrap;border-bottom:1px solid var(--line2);padding-bottom:2px}
 .tel:hover{border-bottom-color:var(--brass)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 24px;border-radius:var(--r);border:1px solid var(--green);background:var(--green);color:var(--greenInk);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .18s,color .18s,border-color .18s;white-space:nowrap}
-.btn:hover{background:var(--green2);border-color:var(--green2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 24px;border-radius:var(--r);border:1px solid var(--gold);background:var(--gold);color:#122A45;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .18s,color .18s,border-color .18s;white-space:nowrap}
+.btn:hover{background:var(--goldDk);border-color:var(--goldDk)}
 .btn:disabled{opacity:.35;cursor:not-allowed}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
 .btn-ghost:hover{background:transparent;border-color:var(--ink);color:var(--ink)}
@@ -90,12 +90,14 @@ p{margin:0}
 .sec{padding:100px 0;scroll-margin-top:92px}.confirm{scroll-margin-top:150px}
 .sec-alt{background:var(--paper2)}
 .sec-dark{background:var(--green);color:var(--greenInk)}
-.sec-dark .eyebrow{color:rgba(235,230,218,.6)}
-.sec-dark .rule{background:rgba(235,230,218,.2)}
+.sec-dark .eyebrow{color:rgba(239,244,250,.62)}
+.sec-dark .rule{background:rgba(239,244,250,.2)}
 .sec-head{display:grid;grid-template-columns:.36fr 1fr;gap:56px;align-items:start;margin-bottom:56px}
 .sec-head h2{font-size:clamp(31px,3.7vw,46px);line-height:1.06;font-weight:300;letter-spacing:-.025em;margin-top:14px}
 .sec-head p{color:var(--ink2);font-size:17.5px;max-width:58ch;margin-top:16px}
-.sec-dark .sec-head p{color:rgba(235,230,218,.78)}
+.sec-dark .sec-head p{color:rgba(239,244,250,.78)}
+.sec-dark .btn-ghost{color:var(--greenInk);border-color:rgba(239,244,250,.4)}
+.sec-dark .btn-ghost:hover{color:#fff;border-color:#fff}
 </style>
 <style>
 /* ---------- booking ---------- */
@@ -181,6 +183,18 @@ p{margin:0}
 .confirm-tbl dt{color:var(--ink3);font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding-top:3px}
 .confirm-tbl dd{margin:0;font-family:var(--ff-d);font-size:17px;text-align:right}
 .confirm-acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.contact-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:64px;align-items:start}
+.cform .btn{margin-top:22px}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+.cside h4{font-size:22px;font-weight:400;margin-bottom:4px}
+.cside .big-tel.dark{color:var(--ink);font-size:32px}
+.cside .big-tel.dark:hover{color:var(--green2)}
+.cside .hero-facts{margin-top:20px}
+.cside a{text-decoration:none;border-bottom:1px solid var(--line2)}
+.cside a:hover{border-bottom-color:var(--brass)}
+.sent{border:1px solid var(--green);border-radius:var(--r);padding:34px;background:var(--paper)}
+.sent h3{font-size:27px;font-weight:400;margin-bottom:10px}
+.sent p{color:var(--ink2);font-size:16px}
 .hide{display:none !important}
 
 /* ---------- standard / checklist ---------- */
@@ -217,14 +231,14 @@ p{margin:0}
 
 /* ---------- reviews ---------- */
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 44px}
-.rev{border-top:1px solid rgba(235,230,218,.22);padding:26px 0 0;margin-bottom:34px}
+.rev{border-top:1px solid rgba(239,244,250,.22);padding:26px 0 0;margin-bottom:34px}
 .rev blockquote{margin:0;font-family:var(--ff-d);font-size:19px;line-height:1.5;font-weight:300;letter-spacing:-.01em}
-.rev cite{display:block;margin-top:16px;font-style:normal;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(235,230,218,.6);font-family:var(--ff-b)}
-.rev-score{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid rgba(235,230,218,.22);border-bottom:1px solid rgba(235,230,218,.22);margin-bottom:56px}
-.rs{padding:26px 40px 26px 0;border-right:1px solid rgba(235,230,218,.22)}
+.rev cite{display:block;margin-top:16px;font-style:normal;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(239,244,250,.62);font-family:var(--ff-b)}
+.rev-score{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid rgba(239,244,250,.22);border-bottom:1px solid rgba(239,244,250,.22);margin-bottom:56px}
+.rs{padding:26px 40px 26px 0;border-right:1px solid rgba(239,244,250,.22)}
 .rs:last-child{border-right:0}
 .rs b{display:block;font-family:var(--ff-d);font-size:34px;font-weight:300;line-height:1}
-.rs span{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:rgba(235,230,218,.62);margin-top:8px;display:block}
+.rs span{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:rgba(239,244,250,.62);margin-top:8px;display:block}
 
 /* ---------- split bands ---------- */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
@@ -245,16 +259,16 @@ p{margin:0}
 .faq .a{padding:0 0 24px 0;color:var(--ink2);font-size:16px;line-height:1.7;max-width:72ch}
 
 /* ---------- footer ---------- */
-.ft{background:var(--ink);color:#CFD6D2;padding:76px 0 34px}
-.ft a{color:#CFD6D2}
+.ft{background:#0A1626;color:#C7D0DC;padding:76px 0 34px}
+.ft a{color:#C7D0DC}
 .ft-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px}
-.ft .mark{color:#F0EDE5}
-.ft h5{font-family:var(--ff-b);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#7E8A85;margin:0 0 16px}
+.ft .mark{color:#F2F5F9}
+.ft h5{font-family:var(--ff-b);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#7C8A9C;margin:0 0 16px}
 .ft ul{list-style:none;margin:0;padding:0}
 .ft li{padding:5px 0;font-size:14.5px}
 .ft li a{text-decoration:none}
 .ft li a:hover{color:#fff}
-.ft-bot{margin-top:56px;padding-top:24px;border-top:1px solid #2A332F;display:flex;flex-wrap:wrap;gap:18px;font-size:12.5px;color:#7E8A85}
+.ft-bot{margin-top:56px;padding-top:24px;border-top:1px solid #1C2A3D;display:flex;flex-wrap:wrap;gap:18px;font-size:12.5px;color:#7C8A9C}
 .ft-bot span{margin-right:auto}
 .big-tel{font-family:var(--ff-d);font-size:29px;font-weight:300;text-decoration:none;display:inline-block;margin:10px 0 6px;letter-spacing:-.01em}
 .big-tel:hover{color:#fff}
@@ -270,6 +284,7 @@ p{margin:0}
   .area{grid-template-columns:repeat(2,1fr);gap:0 32px}
   .rev-grid{grid-template-columns:repeat(2,1fr);gap:0 32px}
   .split{grid-template-columns:1fr;gap:40px}
+  .contact-grid{grid-template-columns:1fr;gap:44px}
   .svc-body-in{grid-template-columns:1fr;gap:24px;padding-left:0}
   .sec-head{grid-template-columns:1fr;gap:0}
   .hero-strip .wrap{grid-template-columns:repeat(2,1fr)}
@@ -322,6 +337,7 @@ p{margin:0}
       <a href="#area">Service Area</a>
       <a href="#reviews">Reviews</a>
       <a href="#commercial">Commercial</a>
+      <a href="#contact">Contact</a>
     </nav>
     <div class="hdr-cta">
       <a class="tel" href="tel:19045138820">(904) 513-8820</a>
@@ -713,6 +729,47 @@ p{margin:0}
   </div>
 </section>
 
+<section class="sec sec-alt" id="contact">
+<div class="wrap">
+<div class="sec-head">
+<div><p class="eyebrow">Get in touch</p></div>
+<div>
+<h2>Rather just ask?</h2>
+<p>Send it straight through and it lands in the office inbox &mdash; no app opens, nothing to copy out. We answer the same day during business hours.</p>
+</div>
+</div>
+<div class="contact-grid">
+<form class="cform" id="cform" novalidate>
+<div class="fields">
+<div class="f"><label for="c_name">Name</label><input id="c_name" autocomplete="name" required></div>
+<div class="f"><label for="c_phone">Phone</label><input id="c_phone" type="tel" inputmode="tel" autocomplete="tel" required></div>
+<div class="f"><label for="c_email">Email</label><input id="c_email" type="email" autocomplete="email"></div>
+<div class="f"><label for="c_svc">Type of service</label><input id="c_svc" placeholder="Deep clean, recurring, move-out&hellip;"></div>
+<div class="f full"><label for="c_addr">Address</label><input id="c_addr" autocomplete="street-address" placeholder="Street, city, ZIP"></div>
+<div class="f"><label for="c_home">Bedrooms &amp; bathrooms</label><input id="c_home" placeholder="3 bed, 2 bath"></div>
+<div class="f"><label for="c_pets">Any pets?</label><input id="c_pets" placeholder="Two dogs"></div>
+<div class="f full"><label for="c_msg">What do you need?</label><textarea id="c_msg" placeholder="Tell us about the home and when you would like us"></textarea></div>
+<div class="f full hp"><label for="c_company">Company</label><input id="c_company" tabindex="-1" autocomplete="off"></div>
+</div>
+<p class="err" id="c_err" role="alert"></p>
+<button type="submit" class="btn" id="c_send">Send it</button>
+<p class="rail-fine">Goes straight to the office. We never share your details.</p>
+</form>
+<aside class="cside">
+<h4>Euroclean Cleaning Service</h4>
+<a class="big-tel dark" href="tel:19045138820">(904) 513-8820</a>
+<dl class="hero-facts">
+<div><dt>Email</dt><dd><a href="mailto:eurocleanduval@gmail.com">eurocleanduval@gmail.com</a></dd></div>
+<div><dt>Where</dt><dd>Jacksonville, Florida</dd></div>
+<div><dt>Office hours</dt><dd>9:00 am &ndash; 5:00 pm</dd></div>
+<div><dt>Cleaning</dt><dd>Seven days a week</dd></div>
+<div><dt>Instagram</dt><dd><a href="https://www.instagram.com/eurocleanduval" rel="noopener">@eurocleanduval</a></dd></div>
+</dl>
+</aside>
+</div>
+</div>
+</section>
+
 <section class="sec" id="faq">
   <div class="wrap">
     <div class="sec-head">
@@ -740,7 +797,7 @@ p{margin:0}
       <div>
         <a class="mark" href="#top">Euro<span>clean</span></a>
         <a class="big-tel" href="tel:19045138820">(904) 513-8820</a>
-        <p style="font-size:14.5px;line-height:1.7;color:#9AA5A0;margin-top:8px">Jacksonville, Florida<br>Open today 9:00 am &ndash; 5:00 pm<br><a href="mailto:eurocleanduval@gmail.com">eurocleanduval@gmail.com</a></p>
+        <p style="font-size:14.5px;line-height:1.7;color:#93A0B1;margin-top:8px">Jacksonville, Florida<br>Open today 9:00 am &ndash; 5:00 pm<br><a href="mailto:eurocleanduval@gmail.com">eurocleanduval@gmail.com</a></p>
       </div>
       <div><h5>Services</h5><ul>
         <li><a href="#services">Maintenance cleaning</a></li>
@@ -755,6 +812,7 @@ p{margin:0}
         <li><a href="#standard">The Euroclean Standard</a></li>
         <li><a href="#reviews">Reviews</a></li>
         <li><a href="#area">Service area</a></li>
+        <li><a href="#contact">Contact us</a></li>
         <li><a href="#faq">Questions</a></li>
         <li><a href="https://www.instagram.com/eurocleanduval" rel="noopener">Instagram</a></li>
       </ul></div>
@@ -841,6 +899,16 @@ p{margin:0}
     {id:"laundry", name:"Laundry, wash & fold",    price:25},
     {id:"patio",   name:"Patio, lanai or garage",  price:25}
   ];
+  var ENDPOINT="https://qlerfkdyslndjbaltkwo.supabase.co/functions/v1/euroclean-lead";
+
+  function sendLead(payload){
+    return fetch(ENDPOINT,{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(payload)
+    }).then(function(r){ return r.json().then(function(j){ return {ok:r.ok&&j&&j.ok,body:j}; }); });
+  }
+
   var MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
   var DOW=["Su","Mo","Tu","We","Th","Fr","Sa"];
 
@@ -1054,6 +1122,8 @@ p{margin:0}
       return;
     }
     err.textContent="";
+    var btn=$("#confirm-btn"), label=btn.textContent;
+    btn.disabled=true; btn.textContent="Sending\u2026";
     var p=calc();
     var ref="EC-"+String(S.date.getFullYear()).slice(2)+String(S.date.getMonth()+1).padStart(2,"0")+String(S.date.getDate()).padStart(2,"0")+"-"+digits($("#ph").value).slice(-4);
     var txt=summaryText(p);
@@ -1064,13 +1134,34 @@ p{margin:0}
       ["Address",$("#ad").value.trim()+", "+$("#ct").value.trim()+" FL "+$("#zp").value.trim()],
       ["Your price",p.recurring?"$"+money(p.first)+" first visit, then $"+money(p.after):"$"+money(p.first)]
     ];
-    $("#confirm-panel").innerHTML=
-      '<h3>That is booked in, '+($("#fn").value.trim()||"friend")+'.</h3>'+
-      '<p class="ref">Reference '+ref+'</p>'+
-      '<p style="color:var(--ink2);font-size:16.5px;line-height:1.7">Send it through with one tap below and the office will confirm the window by text. Nothing is charged now &mdash; you pay the crew when the work is done and you have looked at it.</p>'+
+    var exNames=EXTRAS.filter(function(e){return S.extras[e.id];}).map(function(e){return e.name;}).join(", ");
+    sendLead({
+      kind:"booking",
+      name:$("#fn").value.trim()+" "+$("#ln").value.trim(),
+      phone:$("#ph").value.trim(),
+      email:$("#em").value.trim(),
+      address:$("#ad").value.trim()+", "+$("#ct").value.trim()+" FL "+$("#zp").value.trim(),
+      service:SERVICES[S.svc].label,
+      home:S.beds+" bed, "+S.baths+" bath"+(S.half?", "+S.half+" half":""),
+      frequency:SERVICES[S.svc].freq?FREQ[S.freq].label:"One time",
+      extras:exNames,
+      when:fmtDate(S.date)+", "+S.slot,
+      price:"$"+money(p.first)+(p.recurring?" first visit, then $"+money(p.after)+" "+FREQ[S.freq].label.toLowerCase():""),
+      reference:ref,
+      notes:$("#nt").value.trim()
+    }).then(function(res){
+      btn.disabled=false; btn.textContent=label;
+      var lede = res.ok
+        ? "The office has it and will confirm your window by text. Nothing is charged now &mdash; you pay the crew when the work is done and you have looked at it."
+        : "We could not reach the office automatically. Send it through with one tap below and you are booked &mdash; nothing is charged now.";
+      var head = res.ok ? "That is booked in, " : "Almost there, ";
+      $("#confirm-panel").innerHTML=
+      '<h3>'+head+($("#fn").value.trim()||"friend")+'.</h3>'+
+      '<p class="ref">Reference '+ref+(res.ok?" &middot; sent":"")+'</p>'+
+      '<p style="color:var(--ink2);font-size:16.5px;line-height:1.7">'+lede+'</p>'+
       '<dl class="confirm-tbl">'+rows.map(function(r){return "<div><dt>"+r[0]+"</dt><dd>"+r[1]+"</dd></div>";}).join("")+"</dl>"+
       '<div class="confirm-acts">'+
-        '<a class="btn" href="sms:19045138820?body='+encodeURIComponent(txt)+'">Text it to the office</a>'+
+        '<a class="btn'+(res.ok?' btn-ghost':'')+'" href="sms:19045138820?body='+encodeURIComponent(txt)+'">Text a copy too</a>'+
         '<a class="btn btn-ghost" href="mailto:eurocleanduval@gmail.com?subject='+encodeURIComponent("Booking request "+ref)+"&body="+encodeURIComponent(txt)+'">Email it instead</a>'+
         '<a class="btn btn-ghost" href="tel:19045138820">Call (904) 513-8820</a>'+
         '<button type="button" class="btn btn-ghost" id="restart">Start over</button>'+
@@ -1084,7 +1175,49 @@ p{margin:0}
       $(".book").classList.remove("hide");
       $("#book").scrollIntoView({block:"start",behavior:"auto"});
     });
+    });
   });
+
+  /* ---------- contact form ---------- */
+  var cform=$("#cform");
+  if(cform){
+    cform.addEventListener("submit",function(ev){
+      ev.preventDefault();
+      var nm=$("#c_name"), ph=$("#c_phone"), em=$("#c_email"), er=$("#c_err");
+      var miss=[];
+      [[nm,"your name"],[ph,"a phone number"]].forEach(function(f){
+        var ok=!!f[0].value.trim();
+        if(ok && f[0]===ph) ok=digits(ph.value).length>=10;
+        f[0].setAttribute("aria-invalid",ok?"false":"true");
+        if(!ok) miss.push(f[1]);
+      });
+      if(em.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em.value.trim())){
+        em.setAttribute("aria-invalid","true"); miss.push("a valid email");
+      } else em.setAttribute("aria-invalid","false");
+      if(miss.length){ er.textContent="Still needed: "+miss.join(", ")+"."; return; }
+      er.textContent="";
+      var b=$("#c_send"), lbl=b.textContent;
+      b.disabled=true; b.textContent="Sending\u2026";
+      sendLead({
+        kind:"enquiry",
+        name:nm.value.trim(), phone:ph.value.trim(), email:em.value.trim(),
+        address:$("#c_addr").value.trim(), service:$("#c_svc").value.trim(),
+        home:$("#c_home").value.trim(), company:$("#c_company").value,
+        notes:[$("#c_msg").value.trim(), $("#c_pets").value.trim()?"Pets: "+$("#c_pets").value.trim():""].filter(Boolean).join("\n")
+      }).then(function(res){
+        b.disabled=false; b.textContent=lbl;
+        if(!res.ok){
+          er.textContent="That did not go through. Call or text (904) 513-8820 and we will pick it up straight away.";
+          return;
+        }
+        var wrap=cform.parentNode;
+        var done=document.createElement("div");
+        done.className="sent";
+        done.innerHTML='<h3>Got it, '+(nm.value.trim().split(" ")[0]||"thanks")+'.</h3><p>That is in the office inbox now. We answer the same day during business hours &mdash; if it is urgent, call <a href="tel:19045138820">(904) 513-8820</a>.</p>';
+        wrap.replaceChild(done,cform);
+      });
+    });
+  }
 
   /* ---------- services accordion ---------- */
   $$(".svc-btn").forEach(function(b){
