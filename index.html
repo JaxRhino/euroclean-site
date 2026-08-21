@@ -183,6 +183,46 @@ p{margin:0}
 .confirm-tbl dt{color:var(--ink3);font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding-top:3px}
 .confirm-tbl dd{margin:0;font-family:var(--ff-d);font-size:17px;text-align:right}
 .confirm-acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+/* trust + stats */
+.ticks{list-style:none;margin:26px 0 0;padding:0}
+.ticks li{position:relative;padding:7px 0 7px 26px;font-size:15.5px;color:var(--ink2)}
+.ticks li::before{content:"";position:absolute;left:0;top:15px;width:13px;height:1px;background:var(--gold)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.stats div{background:var(--paper);padding:32px 26px;text-align:center}
+.stats b{display:block;font-family:var(--ff-d);font-size:44px;font-weight:300;line-height:1;letter-spacing:-.03em;color:var(--green)}
+.stats span{display:block;margin-top:10px;font-size:11.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3);line-height:1.5}
+/* pull quote on the navy band */
+.pullquote{margin:0;font-family:var(--ff-d);font-size:clamp(24px,3vw,36px);line-height:1.32;font-weight:300;letter-spacing:-.02em;max-width:20ch;max-width:24ch}
+.pullquote{max-width:none;max-width:24ch}
+.pullquote cite{display:block;margin-top:26px;font-style:normal;font-family:var(--ff-b);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(239,244,250,.62)}
+/* google reviews */
+.grev{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gr{border:1px solid var(--line2);border-radius:var(--r);padding:24px;background:var(--paper)}
+.gr-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.gr-av{width:36px;height:36px;border-radius:50%;background:var(--green);color:var(--greenInk);display:flex;align-items:center;justify-content:center;font-family:var(--ff-d);font-size:16px;flex:0 0 auto}
+.gr-who b{display:block;font-family:var(--ff-b);font-size:14.5px;font-weight:600;line-height:1.3}
+.gr-who span{font-size:12.5px;color:var(--ink3)}
+.gr-stars{color:var(--gold);letter-spacing:2px;font-size:13px;margin-bottom:10px}
+.gr p{font-size:14.5px;line-height:1.6;color:var(--ink2)}
+.grev-foot{margin-top:26px}
+.ul{color:inherit;text-decoration:none;border-bottom:1px solid var(--line2);padding-bottom:2px;font-size:14px}
+.ul:hover{border-bottom-color:var(--gold)}
+.hiring{margin-top:22px;font-size:14.5px;color:rgba(239,244,250,.72)}
+/* form fields on the navy band */
+.sec-dark .f label{color:rgba(239,244,250,.6)}
+.sec-dark .f input,.sec-dark .f textarea{background:rgba(255,255,255,.06);border-color:rgba(239,244,250,.3);color:#fff}
+.sec-dark .f input::placeholder,.sec-dark .f textarea::placeholder{color:rgba(239,244,250,.42)}
+.sec-dark .f input:focus,.sec-dark .f textarea:focus{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
+.sec-dark .rail-fine{color:rgba(239,244,250,.6)}
+.sec-dark .cside h4{color:var(--greenInk)}
+.sec-dark .cside .big-tel.dark{color:var(--greenInk)}
+.sec-dark .cside .big-tel.dark:hover{color:#fff}
+.sec-dark .hero-facts div{border-color:rgba(239,244,250,.2)}
+.sec-dark .hero-facts{border-top-color:rgba(239,244,250,.2)}
+.sec-dark .hero-facts dt{color:rgba(239,244,250,.55)}
+.sec-dark .cside a{border-bottom-color:rgba(239,244,250,.35)}
+.sec-dark .cside a:hover{border-bottom-color:var(--gold)}
+.sec-dark .err{color:#FFC9BE}
 .contact-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:64px;align-items:start}
 .cform .btn{margin-top:22px}
 .hp{position:absolute;left:-9999px;height:0;overflow:hidden}
@@ -285,6 +325,8 @@ p{margin:0}
   .rev-grid{grid-template-columns:repeat(2,1fr);gap:0 32px}
   .split{grid-template-columns:1fr;gap:40px}
   .contact-grid{grid-template-columns:1fr;gap:44px}
+  .grev{grid-template-columns:repeat(2,1fr)}
+  .stats{margin-top:8px}
   .svc-body-in{grid-template-columns:1fr;gap:24px;padding-left:0}
   .sec-head{grid-template-columns:1fr;gap:0}
   .hero-strip .wrap{grid-template-columns:repeat(2,1fr)}
@@ -318,6 +360,8 @@ p{margin:0}
   .counts{grid-template-columns:1fr;gap:20px}
   .slots{grid-template-columns:1fr}
   .std,.area,.rev-grid{grid-template-columns:1fr}
+  .grev{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
   .ft-grid{grid-template-columns:1fr 1fr;gap:34px}
   .confirm{padding:28px 22px}
   .rev-score{display:grid;grid-template-columns:1fr 1fr}
@@ -341,7 +385,7 @@ p{margin:0}
       <a href="#standard">The Standard</a>
       <a href="#services">Services</a>
       <a href="#area">Service Area</a>
-      <a href="#reviews">Reviews</a>
+      <a href="#google">Reviews</a>
       <a href="#commercial">Commercial</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -673,6 +717,32 @@ p{margin:0}
   </div>
 </section>
 
+<section class="sec sec-alt" id="trust">
+<div class="wrap">
+<div class="split">
+<div>
+<p class="eyebrow">Why hire us</p>
+<h2>Trusted by hundreds<br>of Jacksonville families.</h2>
+<p>Euroclean has cleaned homes, offices and rentals across Northeast Florida since 2019 &mdash; a real company with an address, an insurance certificate and a Better Business Bureau file, not a stranger with a bucket.</p>
+<ul class="ticks">
+<li>Fully insured and bonded professionals</li>
+<li>Eco-friendly, non-toxic cleaning products</li>
+<li>Flexible scheduling, seven days a week</li>
+<li>100% satisfaction guarantee</li>
+<li>Transparent pricing, no hidden fees</li>
+<li>Trained, background-checked staff</li>
+</ul>
+</div>
+<div class="stats">
+<div><b>7+</b><span>Years in business</span></div>
+<div><b>500+</b><span>Satisfied clients</span></div>
+<div><b>A+</b><span>BBB accredited since 2020</span></div>
+<div><b>100%</b><span>Satisfaction guarantee</span></div>
+</div>
+</div>
+</div>
+</section>
+
 <section class="sec sec-dark" id="reviews">
   <div class="wrap">
     <div class="sec-head">
@@ -680,20 +750,28 @@ p{margin:0}
       <div><h2>Six years of<br>Jacksonville homes.</h2></div>
     </div>
     <div class="rev-score">
-      <div class="rs"><b>A+</b><span>BBB rating</span></div>
-      <div class="rs"><b>2020</b><span>BBB accredited since</span></div>
-      <div class="rs"><b>4.5</b><span>Verified HomeAdvisor rating</span></div>
-      <div class="rs"><b>83%</b><span>Five-star reviews</span></div>
-    </div>
-    <div class="rev-grid">
-      <div class="rev"><blockquote>&ldquo;Came on short notice and did a fantastic job of cleaning the interior of my home from top to bottom after renovation work. Reasonable price with flexible hours.&rdquo;</blockquote><cite>Laura H. &middot; Verified HomeAdvisor review</cite></div>
-      <div class="rev"><blockquote>&ldquo;The crew was on time. They cleaned the whole house and put everything back in its place. Very friendly and very honest people.&rdquo;</blockquote><cite>Elvedina H. &middot; Verified HomeAdvisor review</cite></div>
-      <div class="rev"><blockquote>&ldquo;Excellent customer service. Experienced and very personable owner.&rdquo;</blockquote><cite>Penny D. &middot; Verified HomeAdvisor review</cite></div>
-      <div class="rev"><blockquote>&ldquo;On time and very thorough. This was an initial cleaning and we will use them regularly.&rdquo;</blockquote><cite>James E. &middot; Verified HomeAdvisor review</cite></div>
-      <div class="rev"><blockquote>&ldquo;Came on time. Worked the entire time they were here. Great team work.&rdquo;</blockquote><cite>Jackie T. &middot; Verified HomeAdvisor review</cite></div>
-      <div class="rev"><blockquote>&ldquo;Everything was spotless.&rdquo;</blockquote><cite>Gibby V. &middot; Verified HomeAdvisor review</cite></div>
-    </div>
-  </div>
+<div class="rs"><b>5.0</b><span>Google rating</span></div>
+<div class="rs"><b>A+</b><span>BBB rating</span></div>
+<div class="rs"><b>2020</b><span>BBB accredited since</span></div>
+<div class="rs"><b>2019</b><span>Cleaning Jacksonville since</span></div>
+</div>
+<blockquote class="pullquote">Very easy to get a quote, and that was the price that I paid. I didn&rsquo;t even have to be there while they were cleaning. I greatly appreciate them and will definitely use them in the future.
+<cite>Cheryl Gessling &middot; Google review</cite></blockquote>
+</div>
+</section>
+
+<section class="sec" id="google">
+<div class="wrap">
+<div class="sec-head">
+<div><p class="eyebrow">Google reviews</p></div>
+<div>
+<h2>5.0, and every<br>one of them earned.</h2>
+<p>Straight from our Google Business Profile.</p>
+</div>
+</div>
+<div class="grev" id="grev"></div>
+<p class="grev-foot"><a class="ul" id="grev-all" href="https://www.google.com/search?q=Euroclean+Cleaning+Service+Jacksonville+FL+reviews" rel="noopener">See all reviews on Google</a></p>
+</div>
 </section>
 
 <section class="sec" id="area">
@@ -735,13 +813,13 @@ p{margin:0}
   </div>
 </section>
 
-<section class="sec sec-alt" id="contact">
+<section class="sec sec-dark" id="contact">
 <div class="wrap">
 <div class="sec-head">
 <div><p class="eyebrow">Get in touch</p></div>
 <div>
 <h2>Rather just ask?</h2>
-<p>Send it straight through and it lands in the office inbox &mdash; no app opens, nothing to copy out. We answer the same day during business hours.</p>
+<p>A good cleaning can transform your home and relieve stress. Our process is about transparency, so we keep in constant communication until the job is done. Send this straight through &mdash; it lands in the office inbox, no app opens, nothing to copy out.</p>
 </div>
 </div>
 <div class="contact-grid">
@@ -771,6 +849,7 @@ p{margin:0}
 <div><dt>Cleaning</dt><dd>Seven days a week</dd></div>
 <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/eurocleanduval" rel="noopener">@eurocleanduval</a></dd></div>
 </dl>
+<p class="hiring">Email or call for our current openings.</p>
 </aside>
 </div>
 </div>
@@ -816,7 +895,8 @@ p{margin:0}
       </ul></div>
       <div><h5>Company</h5><ul>
         <li><a href="#standard">The Euroclean Standard</a></li>
-        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#google">Google reviews</a></li>
+        <li><a href="#trust">Why hire us</a></li>
         <li><a href="#area">Service area</a></li>
         <li><a href="#contact">Contact us</a></li>
         <li><a href="#faq">Questions</a></li>
@@ -914,6 +994,17 @@ p{margin:0}
       body:JSON.stringify(payload)
     }).then(function(r){ return r.json().then(function(j){ return {ok:r.ok&&j&&j.ok,body:j}; }); });
   }
+
+  // Transcribed from the Google Business Profile. When a Places API key exists this
+  // array is what the fetch fills -- the markup below does not change.
+  var GREVIEWS=[
+    {n:"Cheryl Gessling",w:"2 months ago",t:"I used Euroclean for a move out cleaning and carpet cleaning service and they were wonderful. Very easy to get a quote, and that was the price that I paid. I didn't even have to be there while they were cleaning."},
+    {n:"Jacob Noor",w:"1 month ago",t:"I've been using them for a while now. They are always efficient and the quality is always there. They always show up when they say they will."},
+    {n:"Courtney Verry",w:"3 months ago",t:"Scheduled this at the last minute and they were able to get us on the schedule for a move-out clean. Did an awesome job. Thank you!"},
+    {n:"Richy R.",w:"5 months ago",t:"Professional and courteous, and exactly what you ask for. Great work."},
+    {n:"Tamira K.",w:"4 months ago",t:"I would give more than 5 stars if I could. Professional from start to finish, and a relationship I intend to keep."},
+    {n:"Elvedina H.",w:"6 months ago",t:"They cleaned the whole house after a big renovation and put everything back in its place. Very friendly and very honest people."}
+  ];
 
   var MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
   var DOW=["Su","Mo","Tu","We","Th","Fr","Sa"];
@@ -1183,6 +1274,19 @@ p{margin:0}
     });
     });
   });
+
+  /* ---------- google reviews ---------- */
+  var grev=$("#grev");
+  if(grev){
+    grev.innerHTML=GREVIEWS.map(function(r){
+      var initial=r.n.trim().charAt(0).toUpperCase();
+      return '<article class="gr">'+
+        '<div class="gr-top"><span class="gr-av" aria-hidden="true">'+initial+'</span>'+
+        '<span class="gr-who"><b>'+r.n+'</b><span>'+r.w+'</span></span></div>'+
+        '<div class="gr-stars" aria-label="5 out of 5">\u2605\u2605\u2605\u2605\u2605</div>'+
+        '<p>'+r.t+'</p></article>';
+    }).join("");
+  }
 
   /* ---------- contact form ---------- */
   var cform=$("#cform");
